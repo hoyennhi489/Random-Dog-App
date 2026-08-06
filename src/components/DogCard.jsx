@@ -1,9 +1,7 @@
-function DogCard({ dog, newDog }) {
+function DogCard({ image }) {
   return (
     <div>
-      <img src={dog.image} alt="Dog" width="300" />
-      <br />
-      <button onClick={newDog}>New Dog</button>
+      <img src={image} alt="Dog" />
     </div>
   );
 }
