@@ -1,7 +1,7 @@
 function DogCard({ image }) {
   return (
     <div>
-      <img src={image} alt="Dog" />
+      <img src={image} alt="Dog"/>
     </div>
   );
 }
