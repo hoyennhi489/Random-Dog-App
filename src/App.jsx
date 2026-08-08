@@ -12,6 +12,8 @@ function App() {
     author: "",
   });
 
+  const [quoteCount, setQuoteCount] = useState(0);
+
   function getDog() {
     fetch("https://dog.ceo/api/breeds/image/random")
       .then((response) => response.json())
@@ -33,6 +35,11 @@ function App() {
       });
   }
 
+  function newQuote() {
+    getQuote();
+    setQuoteCount(quoteCount + 1);
+  }
+
   useEffect(() => {
     getDog();
     getQuote();
@@ -47,7 +54,8 @@ function App() {
         <h2>Random Quote</h2>
         <p>"{quote.text}"</p>
         <h4>- {quote.author}</h4>
-        <button onClick={getQuote}>New Quote</button>
+        <p>New quotes: {quoteCount}</p>
+        <button onClick={newQuote}>New Quote</button>
       </div>
     </>
   );
